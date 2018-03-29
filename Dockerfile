@@ -1,6 +1,6 @@
 FROM python:3.6-alpine
 
-RUN apk add --no-cache --virtual .build-utils gcc musl-dev && \
+RUN apk add --no-cache --virtual .build-utils gcc musl-dev git && \
     pip install git+https://github.com/TeamNewPipe/isso && mkdir /data && \
     apk del .build-utils
 
