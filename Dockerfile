@@ -1,7 +1,7 @@
 FROM python:3.6-alpine
 
 RUN apk add --no-cache --virtual .build-utils gcc musl-dev && \
-    pip install isso && mkdir /data && \
+    pip install git+https://github.com/TeamNewPipe/isso && mkdir /data && \
     apk del .build-utils
 
 COPY entrypoint.sh /entrypoint.sh
